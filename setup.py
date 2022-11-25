@@ -27,17 +27,12 @@ amg_core_headers = ['evolution_strength',
                     'ruge_stuben',
                     'smoothed_aggregation']
 
-ext_modules = [
-    Pybind11Extension(f'pyamg.amg_core.{f}',
-                      sources=[f'pyamg/amg_core/{f}_bind.cpp'],
-                     )
-    for f in amg_core_headers]
+ext_modules = [Pybind11Extension(f'pyamg.amg_core.{f}',
+                                 sources=[f'pyamg/amg_core/{f}_bind.cpp'])
+               for f in amg_core_headers]
 
-ext_modules += [
-    Pybind11Extension('pyamg.amg_core.tests.bind_examples',
-                      sources=['pyamg/amg_core/tests/bind_examples_bind.cpp'],
-                     )
-    ]
+ext_modules += [Pybind11Extension('pyamg.amg_core.tests.bind_examples',
+                                  sources=['pyamg/amg_core/tests/bind_examples_bind.cpp'])]
 
 setup(
     ext_modules=ext_modules,
