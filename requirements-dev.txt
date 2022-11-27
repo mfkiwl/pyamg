@@ -2,6 +2,7 @@ numpy
 scipy
 pytest
 pep8-naming
+flake8==5.0.4  # v6 has a bug
 flake8-quotes
 flake8-bugbear
 flake8-use-fstring
